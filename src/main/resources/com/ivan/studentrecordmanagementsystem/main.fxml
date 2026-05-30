@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ivan.studentrecordmanagementsystem.Controller">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+
+    <Label text="Student Record Management System" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Name:" prefWidth="80"/>
+        <TextField fx:id="txtName" promptText="Enter name" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Course:" prefWidth="80"/>
+        <TextField fx:id="txtCourse" promptText="Enter course" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER_LEFT">
+        <Label text="Year Level:" prefWidth="80"/>
+        <ChoiceBox fx:id="cbYear" prefWidth="200"/>
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Add" onAction="#addStudent" prefWidth="80"/>
+        <Button text="Update" onAction="#updateStudent" prefWidth="80"/>
+        <Button text="Delete" onAction="#deleteStudent" prefWidth="80"/>
+        <Button text="Clear" onAction="#clearFields" prefWidth="80"/>
+    </HBox>
+
+    <TableView fx:id="table" VBox.vgrow="ALWAYS" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+            <TableColumn fx:id="colCourse" text="Course" prefWidth="150"/>
+            <TableColumn fx:id="colYear" text="Year Level" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>
